@@ -1,0 +1,175 @@
+{
+  "_note": "Day trains, written by hand (not in the Back-on-Track night train database). Stops are the main ones; times not filled yet. Stations get merged with Back-on-Track stations that are less than 600 m away. 'hints' = invisible routing waypoints [lon, lat] inserted after the call at that index (keeps BRouter on the right line).",
+  "operators": {
+    "SNCF/DB": { "name": "SNCF / DB (TGV, ICE)", "url": "https://www.sncf-connect.com" },
+    "SNCF/SBB": { "name": "TGV Lyria", "url": "https://www.tgv-lyria.com" },
+    "SNCF/Renfe": { "name": "SNCF / Renfe (TGV INOUI)", "url": "https://www.sncf-connect.com" },
+    "SNCF": { "name": "SNCF (TGV INOUI)", "url": "https://www.sncf-connect.com" },
+    "Eurostar": { "name": "Eurostar", "url": "https://www.eurostar.com" },
+    "SBB/DB": { "name": "SBB / DB (EuroCity)", "url": "https://www.sbb.ch" },
+    "DB/SBB": { "name": "DB / SBB (Intercity)", "url": "https://www.bahn.de" },
+    "ÖBB": { "name": "ÖBB Railjet", "url": "https://www.oebb.at" },
+    "ÖBB/HŽPP": { "name": "ÖBB / HŽPP (EuroCity)", "url": "https://www.oebb.at" },
+    "HŽPP": { "name": "HŽPP (Croatian Railways)", "url": "https://www.hzpp.hr" },
+    "PKP IC": { "name": "PKP Intercity", "url": "https://www.intercity.pl" },
+    "ČD/PKP": { "name": "ČD / PKP (EuroCity)", "url": "https://www.cd.cz" },
+    "DB/PKP": { "name": "DB / PKP (EuroCity Berlin–Warszawa Express)", "url": "https://www.bahn.de" }
+  },
+  "stations": {
+    "Paris Est":                 [2.3591, 48.8770],
+    "Paris Gare de Lyon":        [2.3744, 48.8443],
+    "Paris Gare du Nord":        [2.3555, 48.8808],
+    "Strasbourg":                [7.7345, 48.5850],
+    "Karlsruhe Hbf":             [8.4022, 48.9935],
+    "Stuttgart Hbf":             [9.1816, 48.7841],
+    "Ulm Hbf":                   [9.9836, 48.3996],
+    "Augsburg Hbf":              [10.8863, 48.3659],
+    "München Hbf":               [11.5600, 48.1403],
+    "Mulhouse":                  [7.3428, 47.7424],
+    "Basel SBB":                 [7.5896, 47.5474],
+    "Zürich HB":                 [8.5402, 47.3782],
+    "Winterthur":                [8.7237, 47.5003],
+    "St. Gallen":                [9.3688, 47.4229],
+    "St. Margrethen":            [9.6372, 47.4528],
+    "Lindau-Reutin":             [9.7032, 47.5527],
+    "Memmingen":                 [10.1774, 47.9844],
+    "Buchloe":                   [10.7258, 48.0336],
+    "Böblingen":                 [9.0074, 48.6845],
+    "Horb":                      [8.6849, 48.4421],
+    "Rottweil":                  [8.6283, 48.1641],
+    "Tuttlingen":                [8.8071, 47.9826],
+    "Singen (Hohentwiel)":       [8.8409, 47.7591],
+    "Schaffhausen":              [8.6327, 47.6981],
+    "Salzburg Hbf":              [13.0458, 47.8130],
+    "Linz Hbf":                  [14.2921, 48.2902],
+    "St. Pölten Hbf":            [15.6247, 48.2083],
+    "Wien Hbf":                  [16.3771, 48.1851],
+    "Győr":                      [17.6348, 47.6820],
+    "Budapest Keleti":           [19.0843, 47.5006],
+    "Wiener Neustadt Hbf":       [16.2337, 47.8115],
+    "Graz Hbf":                  [15.4164, 47.0723],
+    "Maribor":                   [15.6560, 46.5617],
+    "Zagreb Gl. K.":             [15.9796, 45.8049],
+    "Karlovac":                  [15.5487, 45.4995],
+    "Ogulin":                    [15.2315, 45.2660],
+    "Gospić":                    [15.3757, 44.5459],
+    "Knin":                      [16.1981, 44.0373],
+    "Split":                     [16.4428, 43.5049],
+    "Warszawa Centralna":        [21.0032, 52.2289],
+    "Kraków Gł.":                [19.9474, 50.0672],
+    "Břeclav":                   [16.8932, 48.7539],
+    "Přerov":                    [17.4448, 49.4471],
+    "Ostrava hl.n.":             [18.2673, 49.8521],
+    "Bohumín":                   [18.3594, 49.9007],
+    "Katowice":                  [19.0174, 50.2577],
+    "Lille Europe":              [3.0755, 50.6393],
+    "Bruxelles Midi / Brussel Zuid": [4.3363, 50.8357],
+    "Berlin Hbf":                [13.3694, 52.5251],
+    "Frankfurt (Oder)":          [14.5471, 52.3359],
+    "Poznań Gł.":                [16.9109, 52.4020],
+    "Valence TGV":               [4.9781, 44.9914],
+    "Nîmes":                     [4.3657, 43.8327],
+    "Montpellier Saint-Roch":    [3.8806, 43.6047],
+    "Narbonne":                  [3.0059, 43.1903],
+    "Perpignan":                 [2.8796, 42.6961],
+    "Figueres-Vilafant":         [2.9431, 42.2641],
+    "Girona":                    [2.8174, 41.9792],
+    "Barcelona Sants":           [2.1403, 41.3793]
+  },
+  "lines": [
+    {
+      "id": "day-paris-munchen",
+      "name": "Paris – Stuttgart – München",
+      "trainNumbers": ["TGV 9575", "ICE"],
+      "operator": "SNCF/DB",
+      "stops": ["Paris Est", "Strasbourg", "Karlsruhe Hbf", "Stuttgart Hbf", "Ulm Hbf", "Augsburg Hbf", "München Hbf"]
+    },
+    {
+      "id": "day-paris-zurich",
+      "name": "Paris – Basel – Zürich",
+      "trainNumbers": ["TGV Lyria"],
+      "operator": "SNCF/SBB",
+      "stops": ["Paris Gare de Lyon", "Mulhouse", "Basel SBB", "Zürich HB"],
+      "hints": { "0": [[5.9549, 47.3074], [6.8986, 47.5866]] }
+    },
+    {
+      "id": "day-paris-lille",
+      "name": "Paris – Lille",
+      "trainNumbers": ["TGV INOUI"],
+      "operator": "SNCF",
+      "stops": ["Paris Gare du Nord", "Lille Europe"]
+    },
+    {
+      "id": "day-lille-bruxelles",
+      "name": "Lille – Bruxelles",
+      "trainNumbers": ["Eurostar"],
+      "operator": "Eurostar",
+      "stops": ["Lille Europe", "Bruxelles Midi / Brussel Zuid"]
+    },
+    {
+      "id": "day-zurich-munchen",
+      "name": "Zürich – Lindau – München",
+      "trainNumbers": ["EC"],
+      "operator": "SBB/DB",
+      "stops": ["Zürich HB", "Winterthur", "St. Gallen", "St. Margrethen", "Lindau-Reutin", "Memmingen", "Buchloe", "München Hbf"]
+    },
+    {
+      "id": "day-stuttgart-zurich",
+      "name": "Stuttgart – Singen – Zürich",
+      "trainNumbers": ["IC (Gäubahn)"],
+      "operator": "DB/SBB",
+      "stops": ["Stuttgart Hbf", "Böblingen", "Horb", "Rottweil", "Tuttlingen", "Singen (Hohentwiel)", "Schaffhausen", "Zürich HB"]
+    },
+    {
+      "id": "day-munchen-budapest",
+      "name": "München – Wien – Budapest",
+      "trainNumbers": ["Railjet"],
+      "operator": "ÖBB",
+      "stops": ["München Hbf", "Salzburg Hbf", "Linz Hbf", "St. Pölten Hbf", "Wien Hbf", "Győr", "Budapest Keleti"]
+    },
+    {
+      "id": "day-wien-zagreb",
+      "name": "Wien – Graz – Zagreb",
+      "trainNumbers": ["EC"],
+      "operator": "ÖBB/HŽPP",
+      "stops": ["Wien Hbf", "Wiener Neustadt Hbf", "Graz Hbf", "Maribor", "Zagreb Gl. K."]
+    },
+    {
+      "id": "day-zagreb-split",
+      "name": "Zagreb – Split",
+      "trainNumbers": ["ICN"],
+      "operator": "HŽPP",
+      "stops": ["Zagreb Gl. K.", "Karlovac", "Ogulin", "Gospić", "Knin", "Split"]
+    },
+    {
+      "id": "day-warszawa-krakow",
+      "name": "Warszawa – Kraków",
+      "trainNumbers": ["EIP (Pendolino)"],
+      "operator": "PKP IC",
+      "stops": ["Warszawa Centralna", "Kraków Gł."],
+      "hints": { "0": [[19.9463, 50.8564]] }
+    },
+    {
+      "id": "day-wien-warszawa",
+      "name": "Wien – Ostrava – Warszawa",
+      "trainNumbers": ["EC"],
+      "operator": "ČD/PKP",
+      "stops": ["Wien Hbf", "Břeclav", "Přerov", "Ostrava hl.n.", "Bohumín", "Katowice", "Warszawa Centralna"],
+      "hints": { "5": [[19.9463, 50.8564]] }
+    },
+    {
+      "id": "day-berlin-warszawa",
+      "name": "Berlin – Poznań – Warszawa",
+      "trainNumbers": ["EC Berlin–Warszawa Express"],
+      "operator": "DB/PKP",
+      "stops": ["Berlin Hbf", "Frankfurt (Oder)", "Poznań Gł.", "Warszawa Centralna"]
+    },
+    {
+      "id": "day-paris-barcelona",
+      "name": "Paris – Barcelona",
+      "trainNumbers": ["TGV INOUI"],
+      "operator": "SNCF/Renfe",
+      "stops": ["Paris Gare de Lyon", "Valence TGV", "Nîmes", "Montpellier Saint-Roch", "Narbonne", "Perpignan", "Figueres-Vilafant", "Girona", "Barcelona Sants"]
+    }
+  ]
+}

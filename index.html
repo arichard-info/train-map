@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Night Trains Europe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="map" role="application" aria-label="Map of European night trains"></div>
+
+    <div class="brand">
+      <span class="brand-mark">☾</span>
+      <div>
+        <h1>Night Trains</h1>
+        <p>Europe · M0 prototype</p>
+      </div>
+    </div>
+
+    <div class="toolbar" role="toolbar" aria-label="Map options">
+      <button id="btn-theme" type="button"></button>
+    </div>
+
+    <details class="legend" open>
+      <summary>Legend</summary>
+      <ul>
+        <li><span class="lg-line lg-night"></span>Night train</li>
+        <li><span class="lg-line lg-day"></span>Day train</li>
+        <li><span class="lg-line lg-seasonal"></span>Seasonal</li>
+        <li><span class="lg-dot lg-stop"></span>Stop</li>
+        <li><span class="lg-dot lg-pass"></span>Passes through (selected line)</li>
+      </ul>
+    </details>
+
+    <aside id="panel" class="panel" aria-hidden="true" aria-live="polite"></aside>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "night-train-planner",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "network": "node scripts/build-network.mjs",
+    "geometry": "node scripts/build-geometry.mjs",
+    "data": "node scripts/build-network.mjs && node scripts/build-geometry.mjs"
+  },
+  "dependencies": {
+    "maplibre-gl": "5.24.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vite": "7.3.8"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "_note": "Tweaks applied on top of the Back-on-Track import. 'include' = extra trains to import even if they serve fewer than 2 key cities. 'hints' = invisible routing waypoints [lon, lat] inserted after the stop with that name (the database only lists the stops where passengers board or alight, so long gaps can be routed the wrong way). Waypoints are approximations of the real route.",
+  "keyCities": ["Paris", "Lille", "Bruxelles", "Amsterdam", "Berlin", "Praha", "München", "Stuttgart", "Zürich", "Wien", "Budapest", "Zagreb", "Split", "Kraków", "Warszawa"],
+  "include": ["IC Nuit 5789", "IC Nuit 3971"],
+  "hints": {
+    "IC Nuit 5789": {
+      "Paris Austerlitz": [[5.0275, 47.3233], [4.8253, 46.3016], [4.8597, 45.7605], [4.8935, 44.9287]],
+      "Crest": [[5.3677, 44.7536], [5.8232, 44.5345]]
+    },
+    "IC Nuit 3971": {
+      "Paris Austerlitz": [[1.9029, 47.9302], [2.0687, 47.2223], [1.2675, 45.8361], [1.5262, 45.1530], [1.4335, 44.4491], [1.3418, 44.0144]]
+    },
+    "IC 407 / EN 477": {
+      "Rybnik": [[18.3594, 49.9007], [17.4448, 49.4471], [16.8932, 48.7539]]
+    }
+  }
+}
